@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paste - BlueBin</title>
+  <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="card" style="text-align:center;">
+    <h2>Paste</h2>
+    <pre class="codeblock">{{ content }}</pre>
+    <div style="margin-top:1.5rem;">
+      <a href="/raw/{{ paste_id }}" target="_blank"><button>Raw</button></a>
+      <a href="/pastebin"><button>Back</button></a>
+    </div>
+    {% if private %}
+      <div style="margin-top:1rem; color:#2563eb;">This paste is <b>private</b>.</div>
+    {% endif %}
+  </div>
+</body>
+</html>
