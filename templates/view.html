@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Paste - BlueBin</title>
+  <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="card" style="text-align:center;">
+    <h2>View a Paste</h2>
+    <form method="post">
+      <label>Pastebin link:</label>
+      <input name="link" type="text" style="width:80%" placeholder="e.g. /pastebin/abcd1234" required><br>
+      <label>Password (if private):</label>
+      <input name="password" type="password" maxlength="4" pattern="\\d{4}" placeholder="1234"><br>
+      <button type="submit">Reveal Paste</button>
+    </form>
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+    {% if content %}
+      <pre class="codeblock">{{ content }}</pre>
+    {% endif %}
+  </div>
+</body>
+</html>
