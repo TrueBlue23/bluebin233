@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Paste - BlueBin</title>
+  <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="card" style="text-align:center;">
+    <h2>Create a Paste</h2>
+    <form method="post">
+      <label>Paste code/text:</label><br>
+      <textarea name="content" rows="10" required></textarea><br>
+      <label>
+        4-digit Password (optional):
+        <input name="password" type="password" maxlength="4" pattern="\\d{4}" placeholder="e.g. 1234">
+      </label><br>
+      <button type="submit">Create Paste</button>
+    </form>
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+    {% if link %}
+      <div style="margin-top:2rem;">
+        <b>Paste URL:</b> <a href="{{ link }}">{{ link }}</a>
+        <br>
+        <b>Raw:</b> <a href="/raw/{{ link.split('/')[-1] }}" target="_blank">/raw/{{ link.split('/')[-1] }}</a>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
