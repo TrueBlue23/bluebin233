@@ -1,13 +1,18 @@
 from fastapi import FastAPI, Request, Form, HTTPException
-from fastapi.responses import HTMLResponse, RedirectResponse, PlainTextResponse, Response
+from fastapi.responses import HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import secrets
 import string
+import os
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+# Correctly resolve relative paths for Vercel deployment
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PARENT_DIR = os.path.dirname(BASE_DIR)
+
+app.mount("/static", StaticFiles(directory=os.path.join(PARENT_DIR, "static")), name="static")
+templates = Jinja2Templates(directory=os.path.join(PARENT_DIR, "templates"))
 
 # In-memory storage (lost on restart)
 PASTES = {}  # id: {content, private, password, created}
