@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BlueBin Paste</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="main-title">Paste: {{ paste_id }}</h2>
+        <pre id="paste-content" class="paste-content">{{ content }}</pre>
+        <div class="actions">
+            <a class="action-link" href="/raw/{{ paste_id }}" target="_blank">Raw</a>
+            <a class="action-link" href="/download/{{ paste_id }}">Download</a>
+            <button class="action-link" onclick="copyPaste()">Copy</button>
+            <a class="action-link" href="/">New Paste</a>
+        </div>
+        <script>
+        function copyPaste() {
+            const text = document.getElementById('paste-content').innerText;
+            navigator.clipboard.writeText(text)
+                .then(() => alert('Copied!'));
+        }
+        </script>
+    </div>
+</body>
+</html>
