@@ -1,100 +1,77 @@
 body {
-    background: #e3f0ff;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  background: linear-gradient(120deg, #2563eb 0%, #60a5fa 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  color: #222;
 }
-
-.container {
-    max-width: 700px;
-    margin: 3rem auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 32px #2563eb22;
-    padding: 2.5rem 2rem 2rem 2rem;
-    text-align: center;
+h1, h2, h3 {
+  color: #2563eb;
 }
-
-.main-title {
-    color: #2563eb;
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
+button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  margin: 0.7rem 1rem 0.7rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 12px #2563eb44;
 }
-
-.paste-form textarea {
-    width: 90%;
-    border: 1.5px solid #60a5fa;
-    border-radius: 6px;
-    padding: 1rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    resize: vertical;
-    background: #f8fafc;
+button:disabled,
+button[aria-disabled="true"] {
+  background: #aaa;
+  cursor: not-allowed;
 }
-
-.paste-form input[type="password"] {
-    margin: 0.5rem 0 1.2rem 0;
-    padding: 0.7rem;
-    width: 70%;
-    border: 1.5px solid #60a5fa;
-    border-radius: 6px;
-    font-size: 1rem;
-    background: #f8fafc;
+button:hover:not([disabled]) {
+  background: #1d4ed8;
 }
-
-.create-btn {
-    background: linear-gradient(90deg, #2563eb 70%, #60a5fa);
-    color: #fff;
-    border: none;
-    padding: 0.8rem 2.2rem;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 0.7rem;
-    transition: background 0.2s;
+input, textarea {
+  border: 1.5px solid #60a5fa;
+  border-radius: 6px;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  background: #f8fafc;
 }
-
-.create-btn:hover {
-    background: linear-gradient(90deg, #1e40af 70%, #3b82f6);
+textarea {
+  resize: vertical;
+  min-height: 9rem;
+  width: 100%;
+  font-family: 'Fira Mono', 'Consolas', monospace;
 }
-
-.actions {
-    margin: 1.5rem 0 1rem 0;
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 32px #2563eb22;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
 }
-
-.action-link, .actions button {
-    display: inline-block;
-    background: #2563eb;
-    color: #fff;
-    padding: 0.55rem 1.3rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin: 0 0.4rem 0.7rem 0.4rem;
-    text-decoration: none;
-    border: none;
-    transition: background 0.18s;
-    cursor: pointer;
+a {
+  color: #2563eb;
+  text-decoration: underline;
 }
-.action-link:hover, .actions button:hover {
-    background: #1e40af;
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.2rem;
 }
-
-.paste-content {
-    background: #f0f7ff;
-    border: 1.5px solid #60a5fa;
-    border-radius: 6px;
-    padding: 1.1rem;
-    text-align: left;
-    font-size: 1.05rem;
-    max-width: 100%;
-    overflow-x: auto;
-    margin-bottom: 1.2rem;
-}
-
 .error {
-    color: #dc2626;
-    font-weight: bold;
-    margin: 1rem 0 0.4rem 0;
+  color: #dc2626;
+  font-weight: bold;
+  margin: 1rem 0 0.4rem 0;
+}
+.codeblock {
+  text-align: left;
+  background: #f0f5ff;
+  border-radius: 0.5em;
+  padding: 1em;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1.06em;
+  overflow-x: auto;
+  margin: 1.5em 0 0.5em 0;
 }
